@@ -5,6 +5,7 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 
 const {sequelize} = require('./db');
 const {Sauce} = require('./models');
+const seed = require('./seed')
 
 const PORT = 3000;
 
@@ -20,22 +21,7 @@ app.set('view engine', 'handlebars');
 // serve static assets from the public/ folder
 app.use(express.static('public'));
 
-const seedDb = async () => {
-
-    await sequelize.sync({ force: true });
-
-    const sauces = [
-        {name : 'Sriracha', image : '/img/Sriracha.gif'},
-        {name : 'Franks', image: '/img/Franks.gif'},
-        {name : 'Tobasco', image: '/img/Tobasco.gif'}
-    ]
-
-    const saucePromises = sauces.map(sauce => Sauce.create(sauce))
-    await Promise.all(saucePromises)
-    console.log("db populated!")
-}
-
-seedDb();
+seed();
 
 app.get('/sauces', async (req, res) => {
     const sauces= await Sauce.findAll()
