@@ -37,9 +37,9 @@ const seedDb = async () => {
 
 seedDb();
 
-app.get('/', async (req, res) => {
-    const allHotSauces = await Sauce.findAll()
-    res.render('HELLO WORLD', {allHotSauces});
+app.get('/sauces', async (req, res) => {
+    const sauces= await Sauce.findAll()
+    res.render('sauces', {sauces}); //points to sauces handlebar
 })
 
 
