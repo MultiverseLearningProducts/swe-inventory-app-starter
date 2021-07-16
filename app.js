@@ -28,6 +28,10 @@ app.get('/sauces', async (req, res) => {
     res.render('sauces', {sauces}); //points to sauces handlebar
 })
 
+app.get('/sauces/:id', async (req, res) => {
+    const sauce = await Sauce.findByPk(req.params.id)
+    res.render('sauce', {sauce}); 
+})
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
