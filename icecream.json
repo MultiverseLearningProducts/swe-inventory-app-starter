@@ -1,11 +1,220 @@
 {
   "data": [
-      {"name" : "Dairy Queen", "image" : "https://1000logos.net/wp-content/uploads/2020/12/Dairy-Queen-Font.jpg"},
-      {"name" : "Ben & Jerry's", "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Ben_and_jerry_logo.svg"},
-      {"name" : "Haagen-Dazs", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/H%C3%A4agen-Dazs_Logo.svg/1200px-H%C3%A4agen-Dazs_Logo.svg.png"},
-      {"name" : "Blue Bell", "image": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/082014/blue-bell-halfmoon-color.png?itok=iniHi4We"},
-      {"name" : "Magnum", "image": "http://assets.stickpng.com/images/5a37f0e7c488ac6062ac2aa6.png"},
-      {"name" : "Baskin-Robbins", "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Baskin-Robbins_logo.svg/1200px-Baskin-Robbins_logo.svg.png"}
-  ]  
+    {
+      "name": "Dairy Queen",
+      "image": "https://1000logos.net/wp-content/uploads/2020/12/Dairy-Queen-Font.jpg",
+      "flavors": [
+        {
+          "name": "Chocolate",
+          "price": 6.50,
+          "Quantity": 25
+        },
+        {
+          "name": "Vanilla",
+          "price": 5.70,
+          "Quantity": 35
+        },
+        {
+          "name": "Cookies N' Cream",
+          "price": 5.70,
+          "Quantity": 55
+        },
+        {
+          "name": "Buttered Pecan",
+          "price": 4.70,
+          "Quantity": 15
+        },
+        {
+          "name": "Strawberry",
+          "price": 4.60,
+          "Quantity": 5
+        },
+        {
+          "name": "Mango",
+          "price": 5.00,
+          "Quantity": 10
+        }
+      ]
+    },
+    {
+      "name": "Ben & Jerry's",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Ben_and_jerry_logo.svg",
+      "flavors": [
+        {
+          "name": "Chocolate",
+          "price": 6.50,
+          "Quantity": 25
+        },
+        {
+          "name": "Vanilla",
+          "price": 5.70,
+          "Quantity": 35
+        },
+        {
+          "name": "Cookies N' Cream",
+          "price": 5.70,
+          "Quantity": 55
+        },
+        {
+          "name": "Buttered Pecan",
+          "price": 4.70,
+          "Quantity": 15
+        },
+        {
+          "name": "Strawberry",
+          "price": 4.60,
+          "Quantity": 5
+        },
+        {
+          "name": "Mango",
+          "price": 5.00,
+          "Quantity": 10
+        }
+      ]
+    },
+    {
+      "name": "Haagen-Dazs",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/H%C3%A4agen-Dazs_Logo.svg/1200px-H%C3%A4agen-Dazs_Logo.svg.png",
+      "flavors": [
+        {
+          "name": "Chocolate",
+          "price": 6.50,
+          "Quantity": 25
+        },
+        {
+          "name": "Vanilla",
+          "price": 5.70,
+          "Quantity": 35
+        },
+        {
+          "name": "Cookies N' Cream",
+          "price": 5.70,
+          "Quantity": 55
+        },
+        {
+          "name": "Buttered Pecan",
+          "price": 4.70,
+          "Quantity": 15
+        },
+        {
+          "name": "Strawberry",
+          "price": 4.60,
+          "Quantity": 5
+        },
+        {
+          "name": "Mango",
+          "price": 5.00,
+          "Quantity": 10
+        }
+      ]
+    },
+    {
+      "name": "Blue Bell",
+      "image": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/082014/blue-bell-halfmoon-color.png?itok=iniHi4We",
+      "flavors": [
+        {
+          "name": "Chocolate",
+          "price": 6.50,
+          "Quantity": 25
+        },
+        {
+          "name": "Vanilla",
+          "price": 5.70,
+          "Quantity": 35
+        },
+        {
+          "name": "Cookies N' Cream",
+          "price": 5.70,
+          "Quantity": 55
+        },
+        {
+          "name": "Buttered Pecan",
+          "price": 4.70,
+          "Quantity": 15
+        },
+        {
+          "name": "Strawberry",
+          "price": 4.60,
+          "Quantity": 5
+        },
+        {
+          "name": "Mango",
+          "price": 5.00,
+          "Quantity": 10
+        }
+      ]
+    },
+    {
+      "name": "Magnum",
+      "image": "http://assets.stickpng.com/images/5a37f0e7c488ac6062ac2aa6.png",
+      "flavors": [
+        {
+          "name": "Chocolate",
+          "price": 6.50,
+          "Quantity": 25
+        },
+        {
+          "name": "Vanilla",
+          "price": 5.70,
+          "Quantity": 35
+        },
+        {
+          "name": "Cookies N' Cream",
+          "price": 5.70,
+          "Quantity": 55
+        },
+        {
+          "name": "Buttered Pecan",
+          "price": 4.70,
+          "Quantity": 15
+        },
+        {
+          "name": "Strawberry",
+          "price": 4.60,
+          "Quantity": 5
+        },
+        {
+          "name": "Mango",
+          "price": 5.00,
+          "Quantity": 10
+        }
+      ]
+    },
+    {
+      "name": "Baskin-Robbins",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Baskin-Robbins_logo.svg/1200px-Baskin-Robbins_logo.svg.png",
+      "flavors": [
+        {
+          "name": "Chocolate",
+          "price": 6.50,
+          "Quantity": 25
+        },
+        {
+          "name": "Vanilla",
+          "price": 5.70,
+          "Quantity": 35
+        },
+        {
+          "name": "Cookies N' Cream",
+          "price": 5.70,
+          "Quantity": 55
+        },
+        {
+          "name": "Buttered Pecan",
+          "price": 4.70,
+          "Quantity": 15
+        },
+        {
+          "name": "Strawberry",
+          "price": 4.60,
+          "Quantity": 5
+        },
+        {
+          "name": "Mango",
+          "price": 5.00,
+          "Quantity": 10
+        }
+      ]
+    }
+  ]
 }
-
