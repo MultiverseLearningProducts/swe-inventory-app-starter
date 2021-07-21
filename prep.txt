@@ -2,29 +2,31 @@ User Stories (Use Cases)
 As an {X}, I want to {Y}, by {Z}
 X == Kind of user Y == Action Z == Behavior
 
-As a customer, I want to withdraw money, by entering my PIN
-As a customer, I want to check my balance, by entering my PIN and selecting 'Savings'
-As a customer, I want to confirm my account, by selecting "Checking" or "Savings"
-As a teller, I want to log in to the ATM, by entering my password
-As a teller, I want to check remaining cash, by logging in with my account
+As a manager, I want to order items, by request order
+As a worker, I want to check item availability, by going online 
+As a supplier , I want to provide office items, by order request 
+
 Class Diagram (Pseudo-OOP)
-class ATM {
+class manager  {
 	
 	id: INTEGER
-	location: STRING
-	authenticateUser()
-	withdraw()
-	deposit()
-	checkBalance()
-	updateBalance()
+	name : STRING
+	orderItems()
+
 }
 
-class User {
+class worker {
 
 	id : INTEGER
 	name : STRING
-	balace: FLOAT
-	insertCard()
-	retrieveCash()
+	checkItems()
+}
+
+class supplier {
+
+	id : INTEGER
+	name : STRING
+	supplyItems()
+	
 }
 //test
