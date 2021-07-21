@@ -7,4 +7,7 @@ Boilerplate code for SWE Bootcamp Project
 3. npm install
 4. Find your bliss!
 
+Linda's Edit: :)
+Tyson has made a change in the ReadMe
 Aden's edit :)
+
