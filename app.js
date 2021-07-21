@@ -23,12 +23,12 @@ app.use(express.static('public'));
 
 seed();
 
-app.get('/sauces', async (req, res) => {
-    const sauces= await Sauce.findAll()
-    res.render('sauces', {sauces}); //points to sauces handlebar
+app.get('/items', async (req, res) => {
+    const items= await Sauce.findAll()
+    res.render('items', {items}); //points to items handlebar
 })
 
-app.get('/sauces/:id', async (req, res) => {
+app.get('/items/:id', async (req, res) => {
     const sauce = await Sauce.findByPk(req.params.id)
     res.render('sauce', {sauce}); 
 })
