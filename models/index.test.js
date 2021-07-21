@@ -1,14 +1,14 @@
-const {Sauce} = require('./index');
+const {Brand} = require('./index');
 const {sequelize} = require('../db');
 
-describe('Sauce Model', () => {
+describe('Brand Model', () => {
 	beforeAll(async () => {
 		await sequelize.sync({force: true})
 	});
 
-	test('can create a Sauce', async() => {
-		const testSauce = await Sauce.create({name : 'Cholula'})
-		expect(testSauce.name).toBe('Cholula')
+	test('can create a Brand', async() => {
+		const testBrand = await Brand.create({name : 'Magnum'})
+		expect(testBrand.name).toBe('Magnum')
 	})
 
 
