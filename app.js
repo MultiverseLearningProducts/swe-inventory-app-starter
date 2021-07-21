@@ -29,8 +29,8 @@ app.get('/items', async (req, res) => {
 })
 
 app.get('/items/:id', async (req, res) => {
-    const Item = await Item.findByPk(req.params.id)
-    res.render('items', {Item}); 
+    const item = await Item.findByPk(req.params.id)
+    res.render('item', {item}); 
 })
 
 app.listen(PORT, () => {
