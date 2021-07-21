@@ -6,3 +6,5 @@ Boilerplate code for SWE Bootcamp Project
 2. Check out the sample task board.
 3. npm install
 4. Find your bliss!
+
+Linda's Edit: :)
