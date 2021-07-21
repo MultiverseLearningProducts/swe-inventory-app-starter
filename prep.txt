@@ -1,0 +1,32 @@
+User Stories (Use Cases)
+As an {X}, I want to {Y}, by {Z}
+X == Kind of user Y == Action Z == Behavior
+
+As a manager, I want to order items, by request order
+As a worker, I want to check item availability, by going online 
+As a supplier , I want to provide office items, by order request 
+
+Class Diagram (Pseudo-OOP)
+class manager  {
+	
+	id: INTEGER
+	name : STRING
+	orderItems()
+
+}
+
+class worker {
+
+	id : INTEGER
+	name : STRING
+	checkItems()
+}
+
+class supplier {
+
+	id : INTEGER
+	name : STRING
+	supplyItems()
+	
+}
+//test
