@@ -15,7 +15,8 @@ Boilerplate code for SWE Bootcamp Project
 (3). Check in on one another
 (4). Be Responsible 
 (5). Do research
-
+(6). Git fetch origin main (fetching from main branch to personal)
+(7). Git pull origin main (pulling from main branch to personal)
 
 
 https://excalidraw.com/#room=1ea0f098c562a7850458,8B9wOPkOmM0MiFLarcIdoA
