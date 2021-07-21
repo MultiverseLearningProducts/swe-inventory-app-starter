@@ -4,7 +4,7 @@ const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 const {sequelize} = require('./db');
-const {Sauce} = require('./models');
+const {Item} = require('./models');
 const seed = require('./seed')
 
 const PORT = 3000;
@@ -24,13 +24,13 @@ app.use(express.static('public'));
 seed();
 
 app.get('/items', async (req, res) => {
-    const items= await Sauce.findAll()
+    const items= await Item.findAll()
     res.render('items', {items}); //points to items handlebar
 })
 
 app.get('/items/:id', async (req, res) => {
-    const sauce = await Sauce.findByPk(req.params.id)
-    res.render('sauce', {sauce}); 
+    const Item = await Item.findByPk(req.params.id)
+    res.render('items', {Item}); 
 })
 
 app.listen(PORT, () => {
