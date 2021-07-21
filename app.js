@@ -24,13 +24,13 @@ app.use(express.static('public'));
 seed();
 
 app.get('/items', async (req, res) => {
-    const items= await Sauce.findAll()
+    const items= await Item.findAll()
     res.render('items', {items}); //points to items handlebar
 })
 
 app.get('/items/:id', async (req, res) => {
-    const sauce = await Sauce.findByPk(req.params.id)
-    res.render('sauce', {sauce}); 
+    const Item = await Item.findByPk(req.params.id)
+    res.render('items', {Item}); 
 })
 
 app.listen(PORT, () => {
