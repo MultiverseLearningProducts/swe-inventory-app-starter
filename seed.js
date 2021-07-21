@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs').promises;
 
 const {sequelize} = require('./db');
-const {Sauce} = require('./models');
+const {Sauce} = require('./models'); //change Sauce to Inventory models
 
 
 const seed = async () => {
@@ -13,7 +13,7 @@ const seed = async () => {
     const buffer = await fs.readFile(seedPath); // reads json
     const {data} = JSON.parse(String(buffer)); //parses data
 
-    const dataPromises = data.map(item => Sauce.create(item))
+    const dataPromises = data.map(item => Sauce.create(item)) //change Sauce to Inventory models
     await Promise.all(dataPromises)
     console.log("db populated!")
 }

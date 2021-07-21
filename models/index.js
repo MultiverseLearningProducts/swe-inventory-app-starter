@@ -2,9 +2,9 @@ const {Sequelize, DataTypes, Model} = require('sequelize')
 const {sequelize} = require('../db')
 
 
-class Sauce extends Model {}
+class Sauce extends Model {} //change to Inventory models
 
-Sauce.init({
+Sauce.init({                 //change to Inventory models
     name: DataTypes.STRING,
     image: DataTypes.STRING,
 }, {
@@ -12,4 +12,4 @@ Sauce.init({
     timestamps: false,
 });
 
-module.exports = {Sauce};
+module.exports = {Sauce}; //change to export Inventory models

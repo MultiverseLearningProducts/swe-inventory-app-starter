@@ -1,7 +1,7 @@
-const {Sauce} = require('./index');
+const {Sauce} = require('./index'); //change to Inventory models
 const {sequelize} = require('../db');
 
-describe('Sauce Model', () => {
+describe('Sauce Model', () => {		//change test to Inventory models
 	beforeAll(async () => {
 		await sequelize.sync({force: true})
 	});

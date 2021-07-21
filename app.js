@@ -4,10 +4,10 @@ const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 const {sequelize} = require('./db');
-const {Sauce} = require('./models');
+const {Sauce} = require('./models'); //change to Inventory models
 const seed = require('./seed')
 
-const PORT = 3000;
+const PORT = 3000; //maybe change port to 8080
 
 const app = express();
 
@@ -23,15 +23,17 @@ app.use(express.static('public'));
 
 seed();
 
-app.get('/sauces', async (req, res) => {
+app.get('/sauces', async (req, res) => { //route to all inventory items, including programming langs books
     const sauces= await Sauce.findAll()
     res.render('sauces', {sauces}); //points to sauces handlebar
 })
 
-app.get('/sauces/:id', async (req, res) => {
+app.get('/sauces/:id', async (req, res) => { //route to individual inventory items
     const sauce = await Sauce.findByPk(req.params.id)
     res.render('sauce', {sauce}); 
 })
+
+// !! add more routes here !!
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
