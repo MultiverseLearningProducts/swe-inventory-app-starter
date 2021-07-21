@@ -2,7 +2,9 @@ User Stories (Use Cases)
 As an {X}, I want to {Y}, by {Z}
 X == Kind of user Y == Action Z == Behavior
 
-As a customer, I want to withdraw money, by entering my PIN
+//Inventory app for local warehouse
+
+As a user, I want items, by making a item request
 As a customer, I want to check my balance, by entering my PIN and selecting 'Savings'
 As a customer, I want to confirm my account, by selecting "Checking" or "Savings"
 As a teller, I want to log in to the ATM, by entering my password
