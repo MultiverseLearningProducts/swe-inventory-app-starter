@@ -1,5 +1,20 @@
-<div class="big-block">
+{{!-- <div class="big-block">
 	<h2 id="item-name">{{brand.name}}</h2>
 	<img class="item-img" src="{{brand.image}}"/>
     <button id="btn">Add Flavor!</button>
+</div> --}}
+
+<div>
+    <a class="btn" href="/brands">Back to Brands List</a>
+   
+	{{#each brand.Flavors}} 
+	<article class="clearfix item-container block">
+		<h2> Flavor: {{this.name}}</h2>
+		<img class="item-img" src="{{this.image}}" />
+		<h3>{{this.price}} </h3>
+		<h3>{{this.quantity}} </h3>
+	</article>
+    {{/each}}
+
 </div>
+	
