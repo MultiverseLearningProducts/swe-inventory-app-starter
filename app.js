@@ -33,6 +33,8 @@ app.get('/items/:id', async (req, res) => {
     res.render('item', {item}); 
 })
 
+
+
 app.listen(PORT, () => {
     sequelize.sync({force: true});
     console.log(`Your server is running on http://localhost:${PORT}`);
