@@ -5,7 +5,8 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 
 const {sequelize} = require('./db');
 const {Item, Warehouse } = require('./models');
-const seed = require('./seed');
+const seedItems = require('./seedItems');
+const seedWarehouses = require('./seedWarehouses')
 const { AsyncLocalStorage } = require('async_hooks');
 
 const PORT = 3000;
@@ -22,7 +23,8 @@ app.set('view engine', 'handlebars');
 // serve static assets from the public/ folder
 app.use(express.static('public'));
 
-seed();
+seedItems();
+seedWarehouses();
 
 app.get('/items', async (req, res) => {
     const items = await Item.findAll()
@@ -40,8 +42,9 @@ app.get('/all-items', async (req, res) => {
 })
 
 app.get('/warehouses/:id', async (req, res) => {
-    const allWarehouses = await Warehouse.findByPk(req.params.id)
-    res.render('warehouse', {allWarehouses} )
+    const warehouse = await Warehouse.findByPk(req.params.id)
+    console.log(warehouse)
+    res.render('warehouse', {warehouse} )
 })
 
 app.listen(PORT, () => {
