@@ -7,7 +7,8 @@ class Flavor extends Model {}
 Flavor.init({
     name: DataTypes.STRING,
     price: DataTypes.DECIMAL,
-    quantity: DataTypes.DOUBLE
+    quantity: DataTypes.DOUBLE,
+    image: DataTypes.STRING
 }, {
     sequelize,
     timestamps: false,
