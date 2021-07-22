@@ -1,0 +1,9 @@
+{
+    "data": [
+        {"name" : "Amazon", "location" : "New York"},
+        {"name" : "Netflix", "location": "Iowa"},
+        {"name" : "WalMart", "location": "Wisconsin"}
+    ]  
+  }
+  
+  
