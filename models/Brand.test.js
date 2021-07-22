@@ -1,4 +1,4 @@
-const {Brand} = require('./index');
+const {Brand} = require('./Brand');
 const {sequelize} = require('../db');
 
 describe('Brand Model', () => {
