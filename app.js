@@ -61,6 +61,24 @@ app.get('/brands/:id', async (req, res) => {
 //     res.render("brand", { flavors });
 // })
 
+app.get('/new-flavor-form', (req, res) => {
+    res.render('newflavorform')
+})
+
+app.post('/new-flavor', async (req, res) => {
+    let newFlavor = await Flavor.create(req.body)
+    const foundNewFlavor = await Flavor.findByPk(newFlavor.id)
+    //if new flavor was created, send 201 status
+    if(foundNewFlavor) {
+        res.status(201).send('New flavor success')
+        //res.render('flavors')
+    } else {
+        console.error('flavor not created')
+    }
+})
+
+
+
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
