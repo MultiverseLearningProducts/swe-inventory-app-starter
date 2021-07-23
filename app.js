@@ -6,6 +6,7 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 const {sequelize} = require('./db');
 const {Item, User, Warehouse} = require('./models');
 const seed = require('./seed');
+const warehouseSeed = require('./warehousesSeed');
 
 const PORT = 3000;
 
@@ -22,6 +23,7 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 seed();
+warehouseSeed();
 
 app.get('/items', async (req, res) => {
     const items = await Item.findAll()
@@ -45,6 +47,7 @@ app.get('/all-users', async (req, res) => {
 
 app.get('/warehouses/:id', async (req, res) => {
     const warehouse = await Warehouse.findByPk(req.params.id);
+    console.log(warehouse);
     res.render('warehouse', {warehouse});
 })
 

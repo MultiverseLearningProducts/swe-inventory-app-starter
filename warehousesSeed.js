@@ -5,17 +5,17 @@ const {sequelize} = require('./db');
 const {Warehouse} = require('./models');
 
 
-const seed = async () => {
+const warehouseSeed = async () => {
 
     await sequelize.sync({ force: true });
 
-    const warehousesSeedPath = path.join(__dirname, 'warehouses.json'); // creates path to seed data
-    const warehousesBuffer = await fs.readFile(warehousesSeedPath); // reads json
-    const {warehousesData} = JSON.parse(String(warehousesBuffer)); //parses warehousesData
+    const seedPath = path.join(__dirname, 'warehouses.json'); // creates path to seed data
+    const buffer = await fs.readFile(seedPath); // reads json
+    const {data} = JSON.parse(String(buffer)); //parses data
 
-    const warehousesDataPromises = warehousesData.map(warehouse => Warehouse.create(warehouse))
-    await Promise.all(warehousesDataPromises)
+    const dataPromises = data.map(warehouse => Warehouse.create(warehouse))
+    await Promise.all(dataPromises)
     console.log("db populated!")
 }
 
-module.exports = seed
+module.exports = warehouseSeed
