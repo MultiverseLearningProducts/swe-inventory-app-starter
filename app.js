@@ -46,7 +46,6 @@ app.get('/brands/:id', async (req, res) => {
         model:Flavor
     }
 })
- console.log(brand);
     res.render('brand', {brand}); 
 })
 
@@ -77,8 +76,17 @@ app.post('/new-flavor', async (req, res) => {
     }
 })
 
-
-
+//DELETE FLAVOR ROUTE
+app.post('/delete-flavor/:id', async (req, res) => {
+    console.log("destroy flavor")
+    await Flavor.destroy({
+        where: {
+            id: req.params.id
+        }
+    });
+    //res.sendStatus(200);
+    res.redirect('/brands/');
+});
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
