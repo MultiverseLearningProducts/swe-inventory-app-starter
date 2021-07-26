@@ -4,8 +4,9 @@ const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 const {sequelize} = require('./db');
-const {Item, User, Warehouse} = require('./models');
-const seed = require('./seed');
+const {Item, User, Warehouse, Supplier} = require('./models');
+//const seed = require('./seed');
+const Supplierseed = require('./supplierSeed');
 
 const PORT = 3000;
 
@@ -23,6 +24,7 @@ app.use(express.static('public'));
 
 seedItems();
 seedWarehouses();
+Supplierseed();
 
 app.get('/items', async (req, res) => {
     const items = await Item.findAll()
