@@ -4,10 +4,8 @@ const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 const {sequelize} = require('./db');
-const {Item, Warehouse } = require('./models');
-const seedItems = require('./seedItems');
-const seedWarehouses = require('./seedWarehouses')
-const { AsyncLocalStorage } = require('async_hooks');
+const {Item, User, Warehouse} = require('./models');
+const seed = require('./seed');
 
 const PORT = 3000;
 
@@ -41,10 +39,14 @@ app.get('/all-items', async (req, res) => {
     res.render('allItems', {items});
 })
 
+app.get('/all-users', async (req, res) => {
+    const allUsers = await User.create({name:"Damon", role:"BOSS", root: true});
+    res.json(allUsers);
+})
+
 app.get('/warehouses/:id', async (req, res) => {
-    const warehouse = await Warehouse.findByPk(req.params.id)
-    console.log(warehouse)
-    res.render('warehouse', {warehouse} )
+    const warehouse = await Warehouse.findByPk(req.params.id);
+    res.render('warehouse', {warehouse});
 })
 
 app.listen(PORT, () => {
