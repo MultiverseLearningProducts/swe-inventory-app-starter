@@ -1,0 +1,9 @@
+{
+  "data": [
+      {"name" : "Drinks", "amount" : "600", "orderMore":false },
+      {"name" : "Cups", "amount" : "30", "orderMore":true },
+      {"name" : "Entree Foods", "amount" : "50", "orderMore":true }
+      
+  ]  
+}
+
