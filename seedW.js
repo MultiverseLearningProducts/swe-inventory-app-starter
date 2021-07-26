@@ -5,7 +5,7 @@ const {sequelize} = require('./db');
 const {Warehouse} = require('./models');
 
 
-const seed = async () => {
+const seedW = async () => {
 
     await sequelize.sync({ force: true });
 
@@ -18,4 +18,4 @@ const seed = async () => {
     console.log("db populated!")
 }
 
-module.exports = seed
+module.exports = seedW

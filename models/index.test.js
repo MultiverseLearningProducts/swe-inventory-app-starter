@@ -1,4 +1,4 @@
-const {Item} = require('./index');
+const {Item, Supplier, Warehouse, Inventory, User} = require('./index');
 const {sequelize} = require('../db');
 
 describe('Item Model', () => {
@@ -12,4 +12,9 @@ describe('Item Model', () => {
 	})
 
 
+})
+
+describe('User Model', () => {
+	const userOne = await User.create({role: "Manager"})
+	expect(userOne.role).toBe('Manager')
 })
