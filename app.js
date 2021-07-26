@@ -5,8 +5,9 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 
 const {sequelize} = require('./db');
 const {Item, User, Warehouse, Supplier} = require('./models');
-//const seed = require('./seed');
-const Supplierseed = require('./supplierSeed');
+const seedItems = require('./seeditems');
+const seedWarehouses = require('./seedWarehouses')
+const seedSupplier = require('./supplierSeed')
 
 const PORT = 3000;
 
@@ -24,7 +25,8 @@ app.use(express.static('public'));
 
 seedItems();
 seedWarehouses();
-Supplierseed();
+seedSupplier();
+
 
 app.get('/items', async (req, res) => {
     const items = await Item.findAll()
@@ -49,6 +51,11 @@ app.get('/all-users', async (req, res) => {
 app.get('/warehouses/:id', async (req, res) => {
     const warehouse = await Warehouse.findByPk(req.params.id);
     res.render('warehouse', {warehouse});
+})
+
+app.get('/supplier/:id', async (req, res) => {
+    const supplier = await Supplier.findByPk(req.params.id);
+    res.render('supplier', {supplier});
 })
 
 app.listen(PORT, () => {

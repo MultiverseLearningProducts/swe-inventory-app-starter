@@ -1,9 +1,0 @@
-{
-    "data": [
-        {"name" : "KDISTRO", "location" : "Florida", "buyer":"Walmart"},
-        {"name" : "NVCustoms", "location": "Oregon", "buyer" : "Amazon"},
-        {"name" : "WImports", "location": "California", "buyer": "Netflix" }
-    ]  
-  }
-  
-  
