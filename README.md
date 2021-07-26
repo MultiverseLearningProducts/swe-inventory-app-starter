@@ -22,4 +22,6 @@ Boilerplate code for SWE Bootcamp Project
 
 https://excalidraw.com/#room=1ea0f098c562a7850458,8B9wOPkOmM0MiFLarcIdoA
 
-https://wireframepro.mockflow.com/view/M102df2ebd1c2475614819811563083961627053899777
+https://wireframepro.mockflow.com/view/   
+
+M102df2ebd1c2475614819811563083961627053899777
