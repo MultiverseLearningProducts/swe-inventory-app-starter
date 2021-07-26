@@ -7,6 +7,7 @@ const {sequelize} = require('./db');
 const {Item, User, Warehouse} = require('./models');
 const seed = require('./seed');
 const warehouseSeed = require('./warehousesSeed');
+const usersSeed = require('./usersSeed');
 
 const PORT = 3000;
 
@@ -24,6 +25,9 @@ app.use(express.static('public'));
 
 seed();
 warehouseSeed();
+usersSeed();
+
+//Item Routes
 
 app.get('/items', async (req, res) => {
     const items = await Item.findAll()
@@ -40,10 +44,14 @@ app.get('/all-items', async (req, res) => {
     res.render('allItems', {items});
 })
 
-app.get('/all-users', async (req, res) => {
-    const allUsers = await User.create({name:"Damon", role:"BOSS", root: true});
-    res.json(allUsers);
+//User Routes
+
+app.get('/:name', async (req, res) => {
+    const user = await User.findAll({where:{name:req.params.name}});
+    res.json('user', {user});
 })
+
+//Warehouse Routes
 
 app.get('/warehouses/:id', async (req, res) => {
     const warehouse = await Warehouse.findByPk(req.params.id);
