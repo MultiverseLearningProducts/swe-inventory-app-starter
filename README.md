@@ -7,8 +7,8 @@ Boilerplate code for SWE Bootcamp Project
 3. npm install
 4. Find your bliss!
 
------------------------------------
-------------Team Constitution-----------------------
+---------------Testing--------------------
+------------Team Constitution------
 
 (1). Respect each other 
 (2). Prioritize communication
