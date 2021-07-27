@@ -1,12 +1,5 @@
 <!-- # swe-inventory-app-starter -->
 
-
-## How to use 
-1. Fork this repo
-2. Check out the sample task board.
-3. npm install
-4. Find your bliss!
-
 ----------------------------------------------------
 ------------Team Constitution-----------------------
 
