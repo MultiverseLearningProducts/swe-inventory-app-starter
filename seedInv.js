@@ -9,13 +9,14 @@ const seedInv = async () => {
 
     await sequelize.sync({ force: true });
 
-    const inventorySeedPath = path.join(__dirname, 'inventory.json'); // creates path to seed data
-    const inventoryBuffer = await fs.readFile(inventorySeedPath); // reads json
-    const {inventoryData} = JSON.parse(String(inventoryBuffer)); //parses inventory Data
+    const seedPath = path.join(__dirname, 'inventory.json'); // creates path to seed data
+    const buffer = await fs.readFile(seedPath); // reads json
+    const {data} = JSON.parse(String(buffer)); //parses data
 
-    const inventoryDataPromises = inventoryData.map(inventory => Inventory.create(inventory))
-    await Promise.all(inventoryDataPromises)
+    const dataPromises = data.map(inventory => Inventory.create(inventory))
+    await Promise.all(dataPromises)
     console.log("db populated!")
 }
+
 
 module.exports = seedInv

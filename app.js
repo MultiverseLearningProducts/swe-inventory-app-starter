@@ -42,7 +42,7 @@ seedInv();
 seedUser();
 
 
-app.get('/items', async (req, res) => {
+app.get('/', async (req, res) => {
     const items = await Item.findAll()
     res.render('items', {items}); //points to items handlebar
 })
@@ -51,22 +51,12 @@ app.get('/items/:id', async (req, res) => {
     const item = await Item.findByPk(req.params.id)
     res.render('item', {item}); 
 })
-app.get('/allitems', async (req, res) => {
-    const items = await Item.findAll()
-    res.json(items); //points to items handlebar
-})
-
-
-app.get('/all-items', async (req, res) => {
-    const items = await Item.findAll()
-    res.render('allItems', {items});
-})
 
 //User Routes
 
 app.get('/:name', async (req, res) => {
     const user = await User.findAll({where:{name:req.params.name}});
-    res.json('user', {user});
+    res.render('user', {user});
 })
 
 //Warehouse Routes
@@ -75,6 +65,14 @@ app.get('/warehouses/:id', async (req, res) => {
     const warehouse = await Warehouse.findByPk(req.params.id);
     res.json('warehouse', {warehouse});
 })
+
+//Supplier Routes
+
+app.get('/suppliers/:name', async (req, res) => {
+    const supplier = await Supplier.findAll({where:{name:req.params.name}});
+    res.render('supplier', {supplier});
+})
+
 
 
 
