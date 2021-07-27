@@ -7,7 +7,7 @@ const {sequelize} = require('./db');
 const {Sauce} = require('./models');
 const seed = require('./seed')
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
