@@ -9,13 +9,14 @@ const seedSup = async () => {
 
     await sequelize.sync({ force: true });
 
-    const suppliersSeedPath = path.join(__dirname, 'suppliers.json'); // creates path to seed data
-    const suppliersBuffer = await fs.readFile(suppliersSeedPath); // reads json
-    const {suppliersData} = JSON.parse(String(suppliersBuffer)); //parses supplierData
+    const seedPath = path.join(__dirname, 'suppliers.json'); // creates path to seed data
+    const buffer = await fs.readFile(seedPath); // reads json
+    const {data} = JSON.parse(String(buffer)); //parses data
 
-    const suppliersDataPromises = suppliersData.map(supplier => Supplier.create(supplier))
-    await Promise.all(suppliersDataPromises)
+    const dataPromises = data.map(supplier => Supplier.create(supplier))
+    await Promise.all(dataPromises)
     console.log("db populated!")
 }
+
 
 module.exports = seedSup

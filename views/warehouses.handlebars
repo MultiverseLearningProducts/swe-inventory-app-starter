@@ -1,9 +1,8 @@
 <div>
     {{#each warehouses}}
         <div>
-            <a href="/warehouses/{{id}}">Click to see {{name}}</a>
-            
-            
+            <h2 id="warehouse-name">{{this.name}}</h2>
+	        <h2 id="warehouse-location">{{this.location}}</h2>
         </div>
     {{/each}}
 </div>

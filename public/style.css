@@ -1,6 +1,6 @@
 
 body {
-  background-color: thistle;  
+  background-color: royalblue;  
 }
 
 h1, h2 {
@@ -29,6 +29,10 @@ h1, h2 {
   height: 225px;
   background-repeat: no-repeat;
   background-size: 225px;
+}
+
+#item-name {
+  color: rosybrown;
 }
 
 #btn {
