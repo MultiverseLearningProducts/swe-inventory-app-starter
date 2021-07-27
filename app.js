@@ -7,7 +7,7 @@ const {sequelize} = require('./db');
 const {Sauce} = require('./models');
 const seed = require('./seed')
 
-const PORT = process.env.NODE_ENV  || 3000;
+const PORT = 3000;
 
 const app = express();
 
@@ -33,7 +33,7 @@ app.get('/sauces/:id', async (req, res) => {
     res.render('sauce', {sauce}); 
 })
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
     sequelize.sync({force: true});
     console.log(`Your server is running on http://localhost:${PORT}`);
 })
