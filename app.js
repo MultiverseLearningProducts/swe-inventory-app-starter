@@ -4,10 +4,15 @@ const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
 const {sequelize} = require('./db');
-const {Item, User, Warehouse} = require('./models');
-const seed = require('./seed');
-const warehouseSeed = require('./warehousesSeed');
-const usersSeed = require('./usersSeed');
+const {Item, User, Warehouse, Supplier, Inventory} = require('./models');
+const seed = require('./seed.js')
+const seedSup = require("./seedSup.js")
+const seedW = require("./seedW.js")
+const seedUser = require("./seedUser.js")
+const seedInv = require("./seedInv.js")
+
+
+
 
 const PORT = 3000;
 
@@ -23,11 +28,19 @@ app.set('view engine', 'handlebars');
 // serve static assets from the public/ folder
 app.use(express.static('public'));
 
+
 seed();
-warehouseSeed();
-usersSeed();
+
 
 //Item Routes
+
+
+seedSup();
+
+seedW();
+seedInv();
+seedUser();
+
 
 app.get('/items', async (req, res) => {
     const items = await Item.findAll()
@@ -38,6 +51,11 @@ app.get('/items/:id', async (req, res) => {
     const item = await Item.findByPk(req.params.id)
     res.render('item', {item}); 
 })
+app.get('/allitems', async (req, res) => {
+    const items = await Item.findAll()
+    res.json(items); //points to items handlebar
+})
+
 
 app.get('/all-items', async (req, res) => {
     const items = await Item.findAll()
@@ -55,9 +73,10 @@ app.get('/:name', async (req, res) => {
 
 app.get('/warehouses/:id', async (req, res) => {
     const warehouse = await Warehouse.findByPk(req.params.id);
-    console.log(warehouse);
-    res.render('warehouse', {warehouse});
+    res.json('warehouse', {warehouse});
 })
+
+
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
