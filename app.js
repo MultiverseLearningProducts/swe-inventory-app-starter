@@ -50,6 +50,20 @@ app.get('/', async (req, res) => {
 app.get('/items/:id', async (req, res) => {
     const item = await Item.findByPk(req.params.id)
     res.render('item', {item}); 
+    console.log({item}.description);
+})
+
+//Warehouse Routes
+
+app.get('/warehouses', async (req, res) => {
+    const warehouses = await Warehouse.findAll();
+    console.log(warehouses);
+    res.render('warehouses', {warehouses});
+})
+
+app.get('/warehouses/:id', async (req, res) => {
+    const warehouse = await Warehouse.findByPk(req.params.id);
+    res.render('warehouse', {warehouse});
 })
 
 //User Routes
@@ -59,12 +73,6 @@ app.get('/:name', async (req, res) => {
     res.render('user', {user});
 })
 
-//Warehouse Routes
-
-app.get('/warehouses/:id', async (req, res) => {
-    const warehouse = await Warehouse.findByPk(req.params.id);
-    res.json('warehouse', {warehouse});
-})
 
 //Supplier Routes
 

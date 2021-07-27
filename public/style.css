@@ -31,6 +31,10 @@ h1, h2 {
   background-size: 225px;
 }
 
+#item-name {
+  color: rosybrown;
+}
+
 #btn {
   display: inline-block;
   width:  150px;
