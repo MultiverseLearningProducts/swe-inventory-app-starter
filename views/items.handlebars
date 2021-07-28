@@ -1,8 +1,9 @@
 <div>
     {{#each items}}
         <div>
-            <img src="{{image}}"/>
-            <a style="color: orange" href="/items/{{id}}">Click to see {{name}}</a>
+            <img src="{{image}}"/><br>
+            <a style="color: orange" href="/items/{{id}}">Click to see {{name}}</a><br>
+            <button id="delete-button" data-id="{{id}}">Delete {{name}}</button>
         </div>
     {{/each}}
 </div>
