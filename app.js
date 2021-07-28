@@ -12,7 +12,6 @@ const seedUser = require("./seedUser.js")
 const seedInv = require("./seedInv.js");
 const { prototype } = require('express-handlebars/lib/express-handlebars');
 
-app.listen(process.env.PORT || prototype, () => console.log(`App listening at http://localhost:${port}`))
 
 
 const PORT = process.env.PORT || 3000;
@@ -89,3 +88,4 @@ app.listen(PORT, () => {
     sequelize.sync({force: true});
     console.log(`Your server is running on http://localhost:${PORT}`);
 })
+
