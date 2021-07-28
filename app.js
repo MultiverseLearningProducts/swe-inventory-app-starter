@@ -9,9 +9,10 @@ const seed = require('./seed.js')
 const seedSup = require("./seedSup.js")
 const seedW = require("./seedW.js")
 const seedUser = require("./seedUser.js")
-const seedInv = require("./seedInv.js")
+const seedInv = require("./seedInv.js");
+const { prototype } = require('express-handlebars/lib/express-handlebars');
 
-
+app.listen(process.env.PORT || prototype, () => console.log(`App listening at http://localhost:${port}`))
 
 
 const PORT = process.env.PORT || 3000;
