@@ -31,8 +31,6 @@ app.use(express.static('public'));
 app.use(require('body-parser').urlencoded());
 
 seed();
-
-
 seedSup();
 seedW();
 seedInv();
@@ -71,6 +69,7 @@ app.get('/supplier/:id' , async(req,res) => {
 
 app.delete('/remove-item/:id', async (req, res) => {
     await Item.destroy({where: { id: req.params.id }})
+    res.render('items')
 });
 
 //Warehouse Routes
@@ -102,21 +101,13 @@ app.get('/add-item-form', (req, res) => {
 app.post('/new-item', async (req, res) => {
     const newitem = await Item.create(req.body);
     const founditem = await Item.findByPk(newitem.id);
-    if(founditem) {
+    if (founditem) {
         res.status(201).send('NEW item CREATED!!!')
     } else {
         console.log("NO item created")
     }
-    
-
-
 })
 
-//^^^^^^ tier 2
-
-app.delete('/remove-item/:id', async (req, res) => {
-    await Item.destroy({where: { id: req.params.id }})
-});
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
