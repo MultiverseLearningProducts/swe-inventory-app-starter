@@ -13,8 +13,7 @@ const seedInv = require("./seedInv.js");
 const { prototype } = require('express-handlebars/lib/express-handlebars');
 
 
-
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 const app = express();
 
@@ -28,19 +27,17 @@ app.set('view engine', 'handlebars');
 // serve static assets from the public/ folder
 app.use(express.static('public'));
 
-
 seed();
-
-
-//Item Routes
-
-
 seedSup();
-
 seedW();
 seedInv();
 seedUser();
 
+app.get('/favicon.ico', (req, res) => {
+    res.sendStatus(404);
+});
+
+//Item Routes
 
 app.get('/', async (req, res) => {
     const items = await Item.findAll()
@@ -53,11 +50,14 @@ app.get('/items/:id', async (req, res) => {
     console.log({item}.description);
 })
 
+app.delete('/remove-item/:id', async (req, res) => {
+    await Item.destroy({where: { id: req.params.id }})
+});
+
 //Warehouse Routes
 
 app.get('/warehouses', async (req, res) => {
     const warehouses = await Warehouse.findAll();
-    console.log(warehouses);
     res.render('warehouses', {warehouses});
 })
 
@@ -69,10 +69,10 @@ app.get('/warehouses/:id', async (req, res) => {
 //User Routes
 
 app.get('/:name', async (req, res) => {
-    const user = await User.findAll({where:{name:req.params.name}});
+    const user = await User.findAll({where:{name:req.params}});
+    console.log(user)   
     res.render('user', {user});
 })
-
 
 //Supplier Routes
 
@@ -80,9 +80,6 @@ app.get('/suppliers/:name', async (req, res) => {
     const supplier = await Supplier.findAll({where:{name:req.params.name}});
     res.render('supplier', {supplier});
 })
-
-
-
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
