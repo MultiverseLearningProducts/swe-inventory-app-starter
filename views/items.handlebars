@@ -1,12 +1,11 @@
 
 <br>
 <h5>Items are listed Below</h5>
-<div>
+<div class="row">
     {{#each items}}
-        <div id="item-{{id}}">
-            <img src="{{image}}"/><br>
+        <div id="item-{{id}}" class="col-md-3 col-sm-6">
+            <img class="item-img" src="{{image}}"/><br>
             <a style="color: orange" href="/items/{{id}}">Click to see {{name}}</a><br>
-            <button id="delete-button" data-id="{{id}}">Delete {{name}}</button>
         </div>
     {{/each}}
 </div>
@@ -15,5 +14,5 @@
 <br>
 
 <a href="/add-item-form">
-   <input type="button" value="Add Item" />
+   <input type="button" class="btn" value="Add Item" />
 </a>
