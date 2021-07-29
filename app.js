@@ -10,7 +10,8 @@ const seedSup = require("./seedSup.js")
 const seedW = require("./seedW.js")
 const seedUser = require("./seedUser.js")
 const seedInv = require("./seedInv.js");
-const { prototype } = require('express-handlebars/lib/express-handlebars');
+
+
 
 
 const PORT = 3000;
@@ -26,8 +27,11 @@ app.set('view engine', 'handlebars');
 
 // serve static assets from the public/ folder
 app.use(express.static('public'));
+app.use(require('body-parser').urlencoded());
 
 seed();
+
+
 seedSup();
 seedW();
 seedInv();
@@ -39,15 +43,29 @@ app.get('/favicon.ico', (req, res) => {
 
 //Item Routes
 
+app.get('/items', async (req, res) => {
+    const items = await Item.findAll()
+    res.render('items', {items}); //points to items handlebar
+})
+
 app.get('/', async (req, res) => {
     const items = await Item.findAll()
     res.render('items', {items}); //points to items handlebar
 })
 
+
 app.get('/items/:id', async (req, res) => {
     const item = await Item.findByPk(req.params.id)
     res.render('item', {item}); 
-    console.log({item}.description);
+})
+app.get('/allitems', async (req, res) => {
+    const items = await Item.findAll()
+    res.json(items); //points to items handlebar
+})
+
+app.get('/supplier/:id' , async(req,res) => {
+    const supplier = await Supplier.findByPk(req.params.id)
+    res.render('supplier', {supplier})
 })
 
 app.delete('/remove-item/:id', async (req, res) => {
@@ -66,23 +84,40 @@ app.get('/warehouses/:id', async (req, res) => {
     res.render('warehouse', {warehouse});
 })
 
-//User Routes
-
-app.get('/:name', async (req, res) => {
-    const user = await User.findAll({where:{name:req.params}});
-    console.log(user)   
-    res.render('user', {user});
+app.get('/homepage', async (req, res) => {
+    const homepage = await Warehouse.findAll()
+    res.render('homepage', {homepage}); //points to items handlebar
 })
 
-//Supplier Routes
-
-app.get('/suppliers/:name', async (req, res) => {
-    const supplier = await Supplier.findAll({where:{name:req.params.name}});
-    res.render('supplier', {supplier});
+app.get('/inventory/:id', async (req,res) => {
+    const inventory = await Inventory.findByPk(req.params.id)
+    res.render("inventory", {inventory} )
 })
+//adding item routes
+app.get('/add-item-form', (req, res) => {
+    res.render('addItemForm');
+})
+
+app.post('/new-item', async (req, res) => {
+    const newitem = await Item.create(req.body);
+    const founditem = await Item.findByPk(newitem.id);
+    if(founditem) {
+        res.status(201).send('NEW item CREATED!!!')
+    } else {
+        console.log("NO item created")
+    }
+    
+
+
+})
+
+//^^^^^^ tier 2
+
+app.delete('/remove-item/:id', async (req, res) => {
+    await Item.destroy({where: { id: req.params.id }})
+});
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
     console.log(`Your server is running on http://localhost:${PORT}`);
 })
-
