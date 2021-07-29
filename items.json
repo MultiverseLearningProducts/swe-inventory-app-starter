@@ -1,8 +1,8 @@
 {
   "data": [
-      {"name" : "Sriracha", "image" : "/img/Sriracha.gif", "description": "super spicy!", "catergory": "spices", "price": 2.00},
-      {"name" : "Franks", "image": "/img/Franks.gif", "description": "meh.", "catergory": "spices", "price": 0.99},
-      {"name" : "Tobasco", "image": "/img/Tobasco.gif", "description": "flavorful!", "catergory": "spices", "price": 5.00}
+      {"name" : "Gatorade", "image" : "/img/gatorade.png", "description": "Sports Drink", "category": "Beverages" , "price": 34.99},
+      {"name" : "Napkins", "image": "/img/napkins.png", "description": "Clearning", "category": "Food" , "price": 12.45},
+      {"name" : "Plates", "image": "/img/plates.png", "description": "Cleaning", "category": "Food" , "price": 7.99},
+      {"name" : "Chairs", "image": "/img/chair.png", "description": "Housing", "category": "Furniture" , "price": 99.99}
   ]  
 }
-

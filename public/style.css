@@ -1,6 +1,6 @@
 
 body {
-  background-color: royalblue;  
+  background-color: rgb(83, 235, 214);  
 }
 
 h1, h2 {
@@ -29,10 +29,6 @@ h1, h2 {
   height: 225px;
   background-repeat: no-repeat;
   background-size: 225px;
-}
-
-#item-name {
-  color: rosybrown;
 }
 
 #btn {
