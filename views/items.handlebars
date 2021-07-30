@@ -1,14 +1,10 @@
 
 <br>
 <h5>Items are listed Below</h5>
-<div>
+<div class="row">
     {{#each items}}
-<<<<<<< HEAD
-        <div id="item{{id}}">
-=======
-        <div id="item-{{id}}">
->>>>>>> 5fb492ef40b7d67a1b368385ce04b5a62dc6673d
-            <img src="{{image}}"/><br>
+        <div id="item-{{id}}" class="shrink" class="col-md-3 col-sm-6">
+            <img class="item-img" src="{{image}}"/><br>
             <a style="color: orange" href="/items/{{id}}">Click to see {{name}}</a><br>
         </div>
     {{/each}}
@@ -18,5 +14,5 @@
 <br>
 
 <a href="/add-item-form">
-   <input type="button" value="Add Item" />
+   <input type="button" class="btn" value="Add Item" />
 </a>
