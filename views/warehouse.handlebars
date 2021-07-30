@@ -1,5 +1,10 @@
-<div class="big-block">
-	<h2 id="item-name">{{warehouse.name}}</h2>
-	<h2 id="item-location">{{warehouse.location}}</h2>
-    <button id="btn">Pending</button>
+
+<div>
+    {{#each warehouses}}
+        <div>
+            <a href="/warehouses/{{id}}">Click to see {{name}}</a>
+            
+            
+        </div>
+    {{/each}}
 </div>

@@ -2,7 +2,9 @@
     "data": [
         {"name" : "Fossil Warehouse", "location" : "New York"},
         {"name" : "Amazon Warehouse", "location": "Houston"},
-        {"name" : "Walmart Warehouse", "location": "Dallas"}
+        {"name" : "Walmart Warehouse", "location": "Dallas"},
+        {"name" : "Toys R Us Warehouse", "location": "Dallas"}
+
     ]  
   }
   
