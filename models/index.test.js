@@ -11,10 +11,10 @@ describe('Item Model', () => {
 		expect(testItem.name).toBe('Cholula')
 	})
 
+	test("user can delete item") 
+
+
+	
 
 })
 
-describe('User Model', () => {
-	const userOne = await User.create({role: "Manager"})
-	expect(userOne.role).toBe('Manager')
-})
