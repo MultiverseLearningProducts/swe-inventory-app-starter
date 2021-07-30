@@ -11,6 +11,10 @@ describe('Item Model', () => {
 		expect(testItem.name).toBe('Cholula')
 	})
 
+	test("user can delete item") 
+
+
+	
 
 })
 
