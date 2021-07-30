@@ -14,7 +14,3 @@ describe('Item Model', () => {
 
 })
 
-describe('User Model', () => {
-	const userOne = await User.create({role: "Manager"})
-	expect(userOne.role).toBe('Manager')
-})

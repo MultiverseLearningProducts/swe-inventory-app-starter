@@ -101,8 +101,8 @@ app.get('/add-item-form', (req, res) => {
 app.post('/new-item', async (req, res) => {
     const newitem = await Item.create(req.body);
     const founditem = await Item.findByPk(newitem.id);
-    if (founditem) {
-        res.status(201).send('NEW item CREATED!!!')
+    if(founditem) {
+        res.render('item', {item : founditem})
     } else {
         console.log("NO item created")
     }
